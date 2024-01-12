@@ -7,6 +7,16 @@ import { MapContextValue } from 'react-map-gl/dist/esm/components/map';
 
 const MAP_STYLE_URL = "https://api.maptiler.com/maps/streets/style.json?key=QawikB7KNjfTnEh0nljM";
 
+/******************** Distance calculator ********************/
+
+function calculateDistance(position1: Position, position2: Position) {
+  let x = position2.latitude-position1.latitude;
+  let y = position2.longitude-position1.longitude;
+  return Math.sqrt(x*x + y*y);
+}
+
+/******************** Draw Control ********************/
+
 
 
 /******************** Draw Control ********************/
@@ -46,9 +56,10 @@ function MapBoxMarker({longitude, latitude}: {longitude: number, latitude: numbe
 
 
 /******************** Map ********************/
+type Position = {longitude: number, latitude: number};
 export function MapBox() {
   const [cursor, setCursor] = useState<string>('auto');
-  const [positions, setPositions] = useState<{longitude: number, latitude: number}[]>([]);
+  const [positions, setPositions] = useState<Position[]>([]);
 
   const addPosition = useCallback((longitude: number, latitude: number) => {
     setPositions([...positions, {latitude, longitude}])
