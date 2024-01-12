@@ -2,8 +2,8 @@ import './header.css';
 
 export function Header() {
   return (
-    <div>
-      Header Component
-    </div>
+    <header className='header'>
+      Location Analyzer Header
+    </header>
   )
 }

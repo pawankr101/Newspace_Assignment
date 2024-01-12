@@ -3,8 +3,7 @@ import { Header, Analyzer } from './components/index.ts';
 
 export function App() {
   return (
-    <div>
-      App Component
+    <div className='app'>
       <Header/>
       <Analyzer/>
     </div>

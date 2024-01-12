@@ -1,12 +1,11 @@
 import './analyzer.css';
-import { Sidebar, Map } from './components/index.ts';
+import { Sidebar, MapBox } from './components/index.ts';
 
 export function Analyzer() {
   return (
-    <div>
-      Analyzer Component
+    <section className='analyzer'>
       <Sidebar/>
-      <Map/>
-    </div>
+      <MapBox/>
+    </section>
   )
 }

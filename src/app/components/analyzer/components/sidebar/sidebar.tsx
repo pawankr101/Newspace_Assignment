@@ -2,8 +2,8 @@ import './sidebar.css';
 
 export function Sidebar() {
   return (
-    <div>
-      Sidebar Component
+    <div className='sidebar'>
+      <div className='sidebar-item'>Map</div>
     </div>
   )
 }
